@@ -24,4 +24,4 @@ const profileSchema = new Schema({
 //     return v.length > 10;
 //   }, 'my error type'); 
 
-module.exports = mongoose.model('Performer', performerSchema);
+module.exports = mongoose.model('Profile', profileSchema);
