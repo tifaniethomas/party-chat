@@ -1,8 +1,42 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 5vmin;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #c0f6ff;
+  color: #35447c
 }
 
 a {
-  color: #00B7FF;
+  color: #35447c;
+  padding: 1vmin;
+}
+
+nav {
+  height: 5vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2vmin;
+  width: 100%;
+}
+
+.header-logo {
+  margin-right: auto;
+  height: 15vmin;
+  margin-left: -5vmin;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login > img {
+  height: 30px;
+}
+
+.fancy {
+  font-family: 'Satisfy', cursive;
 }
