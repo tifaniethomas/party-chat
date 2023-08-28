@@ -12,10 +12,10 @@
   </head>
 <nav>
     <img src="/images/party.svg" class="header-logo">
-    <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME PAGE</a>
     <% if (user) { %>
-      <a href="/chats"	<%- title === 'All Chat Rooms' ? 'class="active"' : '' %>>
-          ALL CHAT ROOMS</a>
+      <a href="/home" <%- title === 'Home' ? 'class="active"' : '' %>></a>
+      <a href="/chats/index"	<%- title === 'Chat' ? 'class="active"' : '' %>>
+          CHAT</a>
       <a href="/profiles/index" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
