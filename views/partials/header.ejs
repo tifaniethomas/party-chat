@@ -14,9 +14,9 @@
     <img src="/images/party.svg" class="header-logo">
     <% if (user) { %>
       <a href="/home" <%- title === 'Home' ? 'class="active"' : '' %>></a>
-      <a href="/chats/index"	<%- title === 'Chat' ? 'class="active"' : '' %>>
+      <a href="/chats"	<%- title === 'Chat' ? 'class="active"' : '' %>>
           CHAT</a>
-      <a href="/profiles/index" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
+      <a href="/profiles" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google-logo"></a>

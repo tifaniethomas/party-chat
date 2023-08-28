@@ -7,7 +7,7 @@ module.exports = {
 
 async function index(req, res) {
     console.log('hitting chats/index')
-    res.render('/index', { title: 'Party Chat' })
+    res.render('chats/index', { title: 'Party Chat' })
 }
 
 async function show(req, res) {
