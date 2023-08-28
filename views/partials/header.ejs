@@ -16,7 +16,7 @@
     <% if (user) { %>
       <a href="/chats"	<%- title === 'All Chat Rooms' ? 'class="active"' : '' %>>
           ALL CHAT ROOMS</a>
-      <a href="/profiles/<%= user._id %>" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
+      <a href="/profiles/index" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google-logo"></a>
