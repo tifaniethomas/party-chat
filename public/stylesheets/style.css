@@ -20,6 +20,21 @@ nav {
   width: 100%;
 }
 
+table {
+  display: block;
+  overflow: auto;
+  overflow-anchor: none;
+  height: 80vmin;
+}
+
+.anchor {
+  overflow-anchor: auto;
+}
+
+tr:nth-child(even) {
+  background-color: #ffedc5;
+}
+
 .header-logo {
   margin-right: auto;
   height: 15vmin;
@@ -39,4 +54,25 @@ nav {
 
 .fancy {
   font-family: 'Satisfy', cursive;
+}
+
+.chat-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffedc5;
+  width: 100vmin;
+  margin-top: 10vmin;
+  height: 60vmin;
+  font-size: large;
+  border: 1vmin solid #35447c;
+  border-radius: 10px;
+}
+
+.chat-selection > div {
+  background-color: #ffebbd;
+  text-align: center;
+  height: 7vmin;
+  padding: 3vmin 13vmin;
 }
