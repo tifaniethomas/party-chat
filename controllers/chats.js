@@ -1,4 +1,4 @@
-const Chats = require('../models/chat')
+const Chat = require('../models/chat')
 
 module.exports = {
     index,
@@ -13,22 +13,21 @@ async function index(req, res) {
 
 async function show(req, res) {
     console.log('hitting chats/show')
-    const room = await req.params.id
+    const msg = await Chat.findById(req.params.id).populate('messages')
     // const thisUser =  req.user._id
-    res.render(`chats/${ room }`, { title: `Party Chat - ${ room }`})    // const userProfile = await Profile.findBy
+    res.render(`chats/${req.params.id}`, { title: `Party Chat - ${req.params.id}`, msg})    // const userProfile = await Profile.findBy
 }
 
 async function create(req, res) {
-    const room = req.params.id
-    console.log(req.body)
+    // console.log(req)
+    req.body.userName = req.user
+    const chat = await Chat.findOne({'chanName': req.params.id});
+    chat.messages.push(req.body)
     try {
-      const message = await Chat.create(req.body);
-      console.log(message)
-      // Redirect to the new movie's show functionality 
-      res.redirect(`/chats/${ room }`);
+        console.log('hitting create/save')
+        await chat.save()
     } catch (err) {
-      // Typically some sort of validation error
-      console.log(err);
-      res.render(`chats/${ room }`, { errorMsg: err.message });
+        console.log(err);
     }
+    res.redirect(`/chats/${req.params.id}`);
   }
