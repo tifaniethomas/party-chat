@@ -1,12 +1,20 @@
 <%- include('../partials/header') %>
 
 <table>
+    <% chat.messages.forEach(function(msg) { %>
+        <tr>
+            <td><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
+            <td><%= msg.user %></td>
+            <td><%= msg.message %></td>
+        </tr>
+    <% }) %>
     <td class="anchor">
         <form action="/chats/beach-bbq" method="POST">
             <textarea name="message"></textarea>
             <button type="submit">SEND</button>
         </form>
     </td>
+    <td></td>
 </table>
 
 <%- include('../partials/footer') %>
