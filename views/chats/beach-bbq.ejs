@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
+<h3><%= chat.intro %></h3>
 
-<table>
+<table class="chat-table">
     <% chat.messages.forEach(function(msg) { %>
         <tr>
             <td><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
@@ -18,7 +19,7 @@
     <tr>
         <td class="anchor">
             <form action="/chats/beach-bbq" method="POST">
-                <textarea name="message"></textarea>
+                <input type="text" name="message" maxlength="500" placeholder="Type here to send a message!"></textarea>
                 <button type="submit">SEND</button>
             </form>
         </td>

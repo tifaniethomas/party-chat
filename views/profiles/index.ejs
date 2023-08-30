@@ -6,8 +6,13 @@
 </section>
 
 <section id="user-body">
-    There will be links here eventually.
-</section>
+    <% if (!user.profile) { %>
+        <a href="profiles/new">Create a Profile</a>
+    <% } else { %>
+        <a href="/profiles/<%= user.profile %>">View My Profile</a><br>
+        <a href="/profiles/<%= user.profile %>/edit">Edit My Profile</a>
+    <% } %>
+    </section>
 
 
 

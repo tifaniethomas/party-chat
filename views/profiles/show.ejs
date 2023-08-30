@@ -1,16 +1,21 @@
 <%- include('./partials/header') %>
 
-<section>
-    <h2>Profile</h2>
-    <div class="profile" id="name"></div>
-    <div class="profile" id="age"></div>
-    <div class="profile" id="location"></div>
-    <div class="profile" id="likes"></div>
-    <div class="profile" id="dislikes"></div>
-    <div class="profile" id="faveBooks"></div>
-    <div class="profile" id="faveMovies"></div>
-    <div class="profile" id="faveMusic"></div>
-    <div class="profile" id="faveQuote"></div>
+<section class="profile-page">
+    <h2><%= profile.name %>'s Profile</h2>
+    <h3>Location:</h3>
+    <div class="profile" id="location"><%= profile.location %></div>
+    <h3>Likes:</h3>
+    <div class="profile" id="likes"><%= profile.likes %></div>
+    <h3>Dislikes:</h3>
+    <div class="profile" id="dislikes"><%= profile.dislikes %></div>
+    <h3>Favorite Books:</h3>
+    <div class="profile" id="faveBooks"><%= profile.faveBooks %></div>
+    <h3>Favorite Movies:</h3>
+    <div class="profile" id="faveMovies"><%= profile.faveMovies %></div>
+    <h3>Favorite Music:</h3>
+    <div class="profile" id="faveMusic"><%= profile.faveMusic %></div>
+    <h3>Favorite Quote:</h3>
+    <div class="profile" id="faveQuote"><%= profile.faveQuote %></div>
 </section>
 
 <%- include('./partials/footer') %>

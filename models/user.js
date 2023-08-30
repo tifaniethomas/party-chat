@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
-// const User = require('../models/user');
 
 
 const userSchema = new Schema({
@@ -11,7 +9,10 @@ const userSchema = new Schema({
       required: true
     },
     email: String,
-    avatar: String
+    avatar: String,
+    profile: {
+      type: Schema.Types.ObjectId,
+      ref: 'Profile'}
   }, {
     timestamps: true
   });

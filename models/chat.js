@@ -16,6 +16,7 @@ const chatSchema = new Schema({
       type: String,
       required: true
     },
+    intro: String,
     messages: [messageSchema]},
     {timestamps: true
   });
