@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h2>Create a Profile</h2>
+<form id="new-form" action="/profiles/<%= user._id %>" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Birthday:</label>
+    <input type="date" name="born">
+    <label>Location:</label>
+    <input type="text" name="location">
+    <label>Likes:</label>
+    <input type="text" name="likes">
+    <label>Dislikes:</label>
+    <input type="text" name="dislikes">
+    <label>Favorite Books:</label>
+    <input type="text" name="faveBooks">
+    <label>Favorite Movies:</label>
+    <input type="text" name="faveMovies">
+    <label>Favorite Music:</label>
+    <input type="text" name="faveMusic">
+    <label>Favorite Quote</label>
+    <input type="text" name="faveQuote">
+    <input type="submit" value="Add Movie">
+  </form>
+
+<%- include('../partials/footer') %>

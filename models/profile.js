@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
   name: {type: String, required: true},
   born: Date,
@@ -20,8 +20,5 @@ const profileSchema = new Schema({
   timestamps: true
 })
 
-// schema.path('userName').validate(function (v) {
-//     return v.length > 10;
-//   }, 'my error type'); 
 
 module.exports = mongoose.model('Profile', profileSchema);

@@ -3,6 +3,7 @@ const Profile = require('../models/profile')
 module.exports = {
     index,
     show,
+    create,
 }
 
 async function index(req, res) {
@@ -11,7 +12,18 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const thisUser =  req.user._id
-    const userProfile = await Profile.findById(thisUser)
-    res.render(`/profiles/${thisUser}`, { title: 'My Profile', userProfile})
+    const user =  req.user.id
+    const userProfile = await Profile.findById(user)
+    res.render(`/profiles/${user}`, { title: 'My Profile', userProfile})
+}
+
+async function create(req, res) {
+    console.log('getting to profiles/create')
+//    try {
+//     const profile = await Profile.create(req.body)
+//     res.redirect(`/profiles/${user._id}`)
+//    } catch (err) {
+//     console.log(err)
+//     res.render('profiles/new', { errorMsg: err.message })
+//    } 
 }

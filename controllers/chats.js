@@ -9,38 +9,33 @@ module.exports = {
 }
 
 async function index(req, res) {
-    console.log('hitting chats/index')
     res.render('chats/index', { title: 'Party Chat' })
 }
 
 async function show(req, res) {
     console.log('hitting chats/show')
-    const chat = await Chat.findOne({'chanName': req.params.id})
+    const chat = await Chat.findOne({'chanName': req.params.id}).populate('messages.user')
     const users = await User.find({})
-    console.log(chat, users)
     res.render(`chats/${req.params.id}`, { title: `Party Chat - ${req.params.id}`, chat, users})
 }
 
 async function create(req, res) {
-    // console.log(req)
-    req.body.userName = req.user
-    const chat = await Chat.findOne({'chanName': req.params.id}).populate('messages.user')
+    console.log('hitting create/save')
+    req.body.user = req.user
+    const chat = await Chat.findOne({'chanName': req.params.id})
     chat.messages.push(req.body)
     try {
-        console.log('hitting create/save')
         await chat.save()
     } catch (err) {
-        console.log(err);
+        console.log(err)
     }
-    res.redirect(`/chats/${req.params.id}`);
+    res.redirect(`/chats/${req.params.id}`)
   }
 
   async function deleteMessage(req, res) {
-    const chatroom = req.chanName
-    console.log(`chatroom: ${chatroom}`)
-    const chat = await Chat.findOne({ 'messages._id': req.params.id, 'message.user': req.user._id })
-    console.log(`chat: ${chat}`)
+    const chat = await Chat.findOne({'messages._id': req.params.id})
+    console.log(`chatroom: ${chat}`)
     chat.messages.remove(req.params.id)
     await chat.save()
-    res.redirect(`/movies/${chatroom}`)
+    res.redirect(`/chats/${chat.chanName}`)
   }
