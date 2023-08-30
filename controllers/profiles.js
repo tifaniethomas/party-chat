@@ -23,23 +23,24 @@ function newProfile (req, res) {
 }
 
 async function create(req, res) {
-    console.log('getting to profiles/create')
+    console.log(`THIS IS USER:`,req.user)
     try {
         req.body.user = req.user._id
         const newProfile = await Profile.create(req.body)
-        await User.findByIdAndUpdate(req.user._id, { profile: newProfile._id })
-        res.redirect(`/profiles/${newProfile.id}`)
+        console.log(`THIS IS PROFILE:`, newProfile)
+        await User.findByIdAndUpdate(req.user._id, { userProfile: newProfile._id })
+        res.redirect(`/profiles/${newProfile._id}`)
     } catch (err) {
-        console.log(err)
+        console.log(err.message)
         res.render('profiles/new', { errorMsg: err.message, title: 'Error' })
     } 
 }
 
 async function show(req, res) {
-    const profileId =  req.params._id
+    const profileId =  req.params.id
     console.log(profileId)
-    const userProfile = await Profile.findById({profileId})
-    res.render(`/profiles/${profileId}`, { title: 'My Profile'})
+    const profile = await Profile.findById(profileId)
+    res.render(`profiles/show`, { title: 'My Profile', profile})
 }
 
 async function edit(req, res) {
@@ -50,12 +51,11 @@ async function edit(req, res) {
 
 async function update(req, res) {
     try {
-        const updatedProfile = await Profile.findOneAndUpdate(
-            {_id: req.params.id},
-            req.body,
-            {new: true} 
+        await Profile.findByIdAndUpdate(
+            req.params.id,
+            req.body 
         )
-        return res.redirect(`/profiles/${updatedProfile._id}`)
+        return res.redirect(`/profiles/${req.params.id}`)
     } catch (err) {
         console.log(err.message)
         return res. redirect('/profiles')

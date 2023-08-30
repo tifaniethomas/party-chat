@@ -10,7 +10,7 @@ const userSchema = new Schema({
     },
     email: String,
     avatar: String,
-    profile: {
+    userProfile: {
       type: Schema.Types.ObjectId,
       ref: 'Profile'}
   }, {

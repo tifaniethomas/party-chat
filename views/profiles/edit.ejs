@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Your Profile</h2>
+
+<form id="edit-form" action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= profile.name %>">
+    <label>Birthday:</label>
+    <input type="date" name="born" value="<%= profile.born %>">
+    <label>Location:</label>
+    <input type="text" name="location" value="<%= profile.location %>">
+    <label>Likes:</label>
+    <input type="text" name="likes" value="<%= profile.likes %>">
+    <label>Dislikes:</label>
+    <input type="text" name="dislikes" value="<%= profile.dislikes %>">
+    <label>Favorite Books:</label>
+    <input type="text" name="faveBooks" value="<%= profile.faveBooks %>">
+    <label>Favorite Movies:</label>
+    <input type="text" name="faveMovies" value="<%= profile.faveMovies %>">
+    <label>Favorite Music:</label>
+    <input type="text" name="faveMusic" value="<%= profile.faveMusic%>">
+    <label>Favorite Quote</label>
+    <input type="text" name="faveQuote" value="<%= profile.faveQuote %>">
+    <input type="submit" value="Edit Profile">
+  </form>
+
+<%- include('../partials/footer') %>

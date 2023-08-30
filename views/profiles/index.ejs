@@ -6,11 +6,11 @@
 </section>
 
 <section id="user-body">
-    <% if (!user.profile) { %>
+    <% if (!user.userProfile) { %>
         <a href="profiles/new">Create a Profile</a>
     <% } else { %>
-        <a href="/profiles/<%= user.profile %>">View My Profile</a><br>
-        <a href="/profiles/<%= user.profile %>/edit">Edit My Profile</a>
+        <a href="/profiles/<%= user.userProfile %>">View My Profile</a><br>
+        <a href="/profiles/<%= user.userProfile %>/edit">Edit My Profile</a>
     <% } %>
     </section>
 

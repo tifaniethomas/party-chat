@@ -4,9 +4,9 @@
 <table class="chat-table">
     <% chat.messages.forEach(function(msg) { %>
         <tr>
-            <td><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
-            <td><%= msg.user.name %></td>
-            <td><%= msg.message %></td>
+            <td id="time"><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
+            <td id="name"><%= msg.user.name %></td>
+            <td id="msg"><%= msg.message %></td>
             <td>
                 <% if (user?._id.equals(msg.user.id)) { %>
                     <form action="/chats/<%= msg._id %>?_method=DELETE" method="POST">
@@ -25,5 +25,22 @@
         </td>
     </tr>
 </table>
+
+<style>
+#time {
+    align-items: left;
+    font-size: small;
+    width: 10%;
+}
+#name {
+    align-items: left;
+    font-size: medium;
+    width:auto;
+}
+#msg {
+    align-items: left;
+}
+
+</style>
 
 <%- include('../partials/footer') %>
