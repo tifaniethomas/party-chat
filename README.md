@@ -10,7 +10,7 @@ This was very challenging. I found it to be a real mental workout to break apart
 <img src="https://i.imgur.com/lu8CaRR.png" width="600" height="330">
 
 
-[Party Chat](https://tifaniethomas.github.io/memory-game/) - < - _Click Here to Chat!_
+[Party Chat](https://party-chat-8e8fa2f78544.herokuapp.com/) - < - _Click Here to Chat!_
 
 <h3>Special Thanks</h3>
 Thank you so much to Michael and Victor for being available to answer all the questions I had along the way. Also, huge thanks to my group of classmates who were there to help me in the in-between giving me great tips and helping with anything I needed.
