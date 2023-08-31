@@ -9,7 +9,7 @@
                 <td id="name"><a href="/profiles/<%= msg.user.userProfile._id %>"><%= msg.user.name %></a></td>
                 <td id="msg"><%= msg.message %></td>
                 <td>
-                    <% if (user?.id.equals(msg.user.id)) { %>
+                    <% if (user?._id.equals(msg.user.id)) { %>
                         <form action="/chats/<%= msg._id %>?_method=DELETE" method="POST">
                             <button type="submit">X</button>
                         </form>
@@ -34,6 +34,7 @@
         margin: 5vh;
         margin-left: auto;
         margin-right: auto;
+        text-align: center;
     }
     body {
         background-image: url(/images/beach-bbq.svg);
