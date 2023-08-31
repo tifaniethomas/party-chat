@@ -9,7 +9,7 @@
                 <td id="name"><a href="/profiles/<%= msg.user.userProfile._id %>"><%= msg.user.name %></a></td>
                 <td id="msg"><%= msg.message %></td>
                 <td>
-                    <% if (user?._id.equals(msg.user.id)) { %>
+                    <% if (user?.id.equals(msg.user.id)) { %>
                         <form action="/chats/<%= msg._id %>?_method=DELETE" method="POST">
                             <button type="submit">X</button>
                         </form>
