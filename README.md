@@ -13,7 +13,7 @@ This was very challenging. I found it to be a real mental workout to break apart
 [Party Chat](https://tifaniethomas.github.io/memory-game/) - < - _Click Here to Chat!_
 
 <h3>Special Thanks</h3>
-Thank you so much to Michael and Victor for being available to answer all the questions I had along the way. Also, huge thanks to my group of classmates who were there to help me in the in-between giving me great tips and helping with anything I may need.
+Thank you so much to Michael and Victor for being available to answer all the questions I had along the way. Also, huge thanks to my group of classmates who were there to help me in the in-between giving me great tips and helping with anything I needed.
 
 <h3>Plans for the future</h3>
 I would love to add webhook functionality to allow the page to refresh when data changes on its own. I also have plans to add emoji avatar selection to the profile page to populate an image for the chat.
