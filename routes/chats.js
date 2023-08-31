@@ -6,7 +6,7 @@ const ensureProfile = require('../config/ensureProfile')
 
 router.get('/', ensureLoggedIn, chatsCtrl.index)
 router.get('/:id', ensureLoggedIn, ensureProfile, chatsCtrl.show)
-router.post('/:id', ensureLoggedIn, chatsCtrl.create)
+router.post('/:id', ensureLoggedIn, ensureProfile, chatsCtrl.create)
 router.delete('/:id', ensureLoggedIn, chatsCtrl.delete)
 
 
