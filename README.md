@@ -7,7 +7,7 @@ I used a combination of MongoDB with Mongoose-defined Schemas, Express, and Node
 This was very challenging. I found it to be a real mental workout to break apart all the entity relationships and how they work together, which data types need to be embedded and which need to be relational, calculate all the proper RESTful routes and give each page the appropriate design to be nice-looking and still funcitonal. 
 
 
-<img src="https://i.imgur.com/lu8CaRR.png" width="708" height="330">
+<img src="https://i.imgur.com/lu8CaRR.png" width="600" height="330">
 
 
 [Party Chat](https://tifaniethomas.github.io/memory-game/) - < - _Click Here to Chat!_
