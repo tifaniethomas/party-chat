@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+<h3><%= chat.intro %></h3>
+
+<section>
+    <table class="<%= chat.chanName %>">
+        <% chat.messages.forEach(function(msg) { %>
+            <tr>
+                <td id="time"><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
+                <td id="name"><a href="/profiles/<%= msg.user.userProfile._id %>"><%= msg.user.name %></a></td>
+                <td id="msg"><%= msg.message %></td>
+                <td>
+                    <% if (user?._id.equals(msg.user.id)) { %>
+                        <form action="/chats/<%= msg._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    <% } %>
+                </td>
+                </tr>
+        <% }) %>
+            <tr>
+                <td class="anchor">
+                </td>
+            </tr>
+    </table>
+
+    <form action="/chats/<%= chat.chanName %>" method="POST">
+        <input type="text" name="message" maxlength="500" placeholder="Type here to send a message!"></textarea>
+        <button type="submit">SEND</button>
+    </form>
+</section>
+
+<style>
+    h3 {
+        margin-top: 5vh;
+        color: #582a3b;
+    }
+    body {
+        background-image: url(/images/draculas-castle.svg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+    section {
+        margin: auto;
+        background-color: #d3b9c4;
+        height: fit-content;
+        align-items: center;
+        width: 90vh;
+    }
+    form {
+        align-items: center;
+    }
+    input {
+        align-items: center;
+        width: 80vh;
+    }
+    #time {
+        align-items: left;
+        font-size: small;
+        width: 10vh;
+    }
+    #name {
+        align-items: left;
+        font-size: medium;
+        width: 20vh;
+    }
+    #msg {
+        align-items: left;
+        width: 65vh;
+    }
+    .header-logo {
+        border: solid #060501
+    }
+
+</style>
+
+<%- include('../partials/footer') %>

@@ -1,5 +1,6 @@
 const Chat = require('../models/chat')
 const User = require('../models/user')
+const Profile = require('../models/profile')
 
 module.exports = {
     index,
@@ -13,14 +14,13 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    console.log('hitting chats/show')
     const chat = await Chat.findOne({'chanName': req.params.id}).populate('messages.user')
     const users = await User.find({})
-    res.render(`chats/${req.params.id}`, { title: `Party Chat - ${req.params.id}`, chat, users})
+    const chatProfiles = await Profile.find({})
+    res.render(`chats/${req.params.id}`, { title: `Party Chat - ${req.params.id}`, chat, users, chatProfiles})
 }
 
 async function create(req, res) {
-    console.log('hitting create/save')
     req.body.user = req.user
     const chat = await Chat.findOne({'chanName': req.params.id})
     chat.messages.push(req.body)

@@ -46,7 +46,7 @@ async function show(req, res) {
 async function edit(req, res) {
     const profile = await Profile.findOne({_id: req.params.id})
     if (!profile) return res.redirect('/profiles')
-    res.render('profiles/edit', { profile })
+    res.render('profiles/edit', { title: 'Edit Profile', profile })
 }
 
 async function update(req, res) {
@@ -58,6 +58,6 @@ async function update(req, res) {
         return res.redirect(`/profiles/${req.params.id}`)
     } catch (err) {
         console.log(err.message)
-        return res. redirect('/profiles')
+        return res.redirect('/profiles')
     }
 }

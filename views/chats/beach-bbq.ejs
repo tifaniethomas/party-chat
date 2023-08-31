@@ -1,45 +1,78 @@
 <%- include('../partials/header') %>
-<h3><%= chat.intro %></h3>
+<h3 id="chat-header"><%= chat.intro %></h3>
 
-<table class="chat-table">
-    <% chat.messages.forEach(function(msg) { %>
-        <tr>
-            <td id="time"><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
-            <td id="name"><%= msg.user.name %></td>
-            <td id="msg"><%= msg.message %></td>
-            <td>
-                <% if (user?._id.equals(msg.user.id)) { %>
-                    <form action="/chats/<%= msg._id %>?_method=DELETE" method="POST">
-                      <button type="submit">X</button>
-                    </form>
-                <% } %>
-            </td>
-        </tr>
-    <% }) %>
-    <tr>
-        <td class="anchor">
-            <form action="/chats/beach-bbq" method="POST">
-                <input type="text" name="message" maxlength="500" placeholder="Type here to send a message!"></textarea>
-                <button type="submit">SEND</button>
-            </form>
-        </td>
-    </tr>
-</table>
+<section>
+    <table class="<%= chat.chanName %>">
+        <% chat.messages.forEach(function(msg) { %>
+            <tr>
+                <td id="time"><%= msg.createdAt.toLocaleString('en-US', {hour: 'numeric', minute: '2-digit'}) %></td>
+                <td id="name"><a href="/profiles/<%= msg.user.userProfile._id %>"><%= msg.user.name %></a></td>
+                <td id="msg"><%= msg.message %></td>
+                <td>
+                    <% if (user?._id.equals(msg.user.id)) { %>
+                        <form action="/chats/<%= msg._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    <% } %>
+                </td>
+                </tr>
+        <% }) %>
+            <tr>
+                <td class="anchor">
+                </td>
+            </tr>
+    </table>
+
+    <form action="/chats/beach-bbq" method="POST">
+        <input type="text" name="message" maxlength="500" placeholder="Type here to send a message!"></textarea>
+        <button type="submit">SEND</button>
+    </form>
+</section>
 
 <style>
-#time {
-    align-items: left;
-    font-size: small;
-    width: 10%;
-}
-#name {
-    align-items: left;
-    font-size: medium;
-    width:auto;
-}
-#msg {
-    align-items: left;
-}
+    #chat-header {
+        margin: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body {
+        background-image: url(/images/beach-bbq.svg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+    section {
+        margin: auto;
+        background-color: #c0f6ff;
+        height: fit-content;
+        align-items: center;
+        width: 90vh;
+    }
+    form {
+        align-items: center;
+    }
+    input {
+        align-items: center;
+        width: 80vh;
+    }
+    #time {
+        align-items: left;
+        font-size: small;
+        width: 10vh;
+    }
+    #name {
+        align-items: left;
+        font-size: medium;
+        width: 20vh;
+    }
+    #msg {
+        align-items: left;
+        width: 65vh;
+    }
+    .header-logo {
+        border: solid white
+    }
 
 </style>
 
