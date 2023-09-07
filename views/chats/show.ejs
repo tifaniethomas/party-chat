@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h3 id="chat-header"><%= chat.intro %></h3>
+<h3><%= chat.intro %></h3>
 
 <section>
     <table class="<%= chat.chanName %>">
@@ -23,21 +23,20 @@
             </tr>
     </table>
 
-    <form action="/chats/beach-bbq" method="POST">
+    <form action="/chats/<%= chat.chanName %>" method="POST">
         <input type="text" name="message" maxlength="500" placeholder="Type here to send a message!"></textarea>
         <button type="submit">SEND</button>
     </form>
 </section>
 
 <style>
-    #chat-header {
-        margin: 5vh;
-        margin-left: auto;
-        margin-right: auto;
+    h3 {
+        margin-top: 5vh;
+        color: #582a3b;
         text-align: center;
     }
     body {
-        background-image: url(/images/beach-bbq.svg);
+        background-image: url(/images/draculas-castle.svg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -45,7 +44,7 @@
     }
     section {
         margin: auto;
-        background-color: #c0f6ff;
+        background-color: #d3b9c4;
         height: fit-content;
         align-items: center;
         width: 90vh;
@@ -72,7 +71,7 @@
         width: 65vh;
     }
     .header-logo {
-        border: solid white
+        border: solid #060501
     }
 
 </style>

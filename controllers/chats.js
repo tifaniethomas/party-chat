@@ -17,7 +17,7 @@ async function show(req, res) {
     const chat = await Chat.findOne({'chanName': req.params.id}).populate('messages.user')
     const users = await User.find({})
     const chatProfiles = await Profile.find({})
-    res.render(`chats/${req.params.id}`, { title: `Party Chat - ${req.params.id}`, chat, users, chatProfiles})
+    res.render(`chats/show`, { title: `${req.params.id}`, chat, users, chatProfiles})
 }
 
 async function create(req, res) {

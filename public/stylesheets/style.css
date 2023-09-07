@@ -69,3 +69,57 @@ tr:nth-child(even) {
   height: 7vmin;
   padding: 3vmin 13vmin;
 }
+
+.Home {
+  background-image: url('/images/homebg.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+}
+
+.beach-bbq {
+  background-image: url(/images/beach-bbq.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.beach-bbq > #chat-header {
+  margin: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.beach-bbq > section {
+  margin: auto;
+  background-color: #c0f6ff;
+  height: fit-content;
+  align-items: center;
+  width: 90vh;
+}
+.beach-bbq > form {
+  align-items: center;
+}
+.beach-bbq > input {
+  align-items: center;
+  width: 80vh;
+}
+.beach-bbq > #time {
+  align-items: left;
+  font-size: small;
+  width: 10vh;
+}
+.beach-bbq > #name {
+  align-items: left;
+  font-size: medium;
+  width: 20vh;
+}
+.beach-bbq > #msg {
+  align-items: left;
+  width: 65vh;
+}
+.beach-bbq > .header-logo {
+  border: solid white
+}
