@@ -86,10 +86,8 @@ tr:nth-child(even) {
   background-position: center;
 }
 
-.beach-bbq > #chat-header {
+.beach-bbq > h3 {
   margin: 5vh;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
 }
 .beach-bbq > section {
@@ -120,6 +118,196 @@ tr:nth-child(even) {
   align-items: left;
   width: 65vh;
 }
-.beach-bbq > .header-logo {
+.beach-bbq > nav > .header-logo {
   border: solid white
+}
+
+.draculas-castle {
+  background-image: url(/images/draculas-castle.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.draculas-castle > h3 {
+  margin-top: 5vh;
+  color: #582a3b;
+  text-align: center;
+}
+
+.draculas-castle > section {
+  margin: auto;
+  background-color: #d3b9c4;
+  height: fit-content;
+  align-items: center;
+  width: 90vh;
+}
+.draculas-castle > form {
+  align-items: center;
+}
+.draculas-castle > input {
+  align-items: center;
+  width: 80vh;
+}
+.draculas-castle > #time {
+  align-items: left;
+  font-size: small;
+  width: 10vh;
+}
+.draculas-castle > #name {
+  align-items: left;
+  font-size: medium;
+  width: 20vh;
+}
+.draculas-castle > #msg {
+  align-items: left;
+  width: 65vh;
+}
+.draculas-castle > nav > .header-logo {
+  border: solid #060501
+}
+
+.galactic-unicorn {
+  background-image: url(/images/galactic-unicorn.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.galactic-unicorn > h3 {
+  margin: 5vh;
+  text-align: center;
+}
+.galactic-unicorn > section {
+  margin: auto;
+  background-color: #c0f6ff;
+  height: fit-content;
+  align-items: center;
+  width: 90vh;
+}
+.galactic-unicorn > form {
+  align-items: center;
+}
+.galactic-unicorn > input {
+  align-items: center;
+  width: 80vh;
+}
+.galactic-unicorn > #time {
+  align-items: left;
+  font-size: small;
+  width: 10vh;
+}
+.galactic-unicorn > #name {
+  align-items: left;
+  font-size: medium;
+  width: 20vh;
+}
+.galactic-unicorn > #msg {
+  align-items: left;
+  width: 65vh;
+}
+.galactic-unicorn > nav > .header-logo {
+  border: solid white
+}
+
+.possum-porch {
+  background-image: url(/images/possum-porch.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.possum-porch h3 {
+  margin: 5vh;
+  text-align: center;
+}
+.possum-porch section {
+  margin: auto;
+  background-color: #c0f6ff;
+  height: fit-content;
+  align-items: center;
+  width: 90vh;
+}
+.possum-porch form {
+  align-items: center;
+}
+.possum-porch input {
+  align-items: center;
+  width: 80vh;
+}
+.possum-porch #time {
+  align-items: left;
+  font-size: small;
+  width: 10vh;
+}
+.possum-porch #name {
+  align-items: left;
+  font-size: medium;
+  width: 20vh;
+}
+.possum-porch #msg {
+  align-items: left;
+  width: 65vh;
+}
+.possum-porch .header-logo {
+  border: solid #060501
+}
+
+.wizards-tower {
+  background-image: url(/images/wizards-tower.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.wizards-tower > h3 {
+  color: white;
+  margin: 5vh;
+  text-align: center;
+}
+.wizards-tower > section {
+  margin: auto;
+  background-color: #fda918;
+  height: fit-content;
+  align-items: center;
+  width: 90vh;
+}
+.wizards-tower > form {
+  align-items: center;
+}
+.wizards-tower > table > tr {
+  align-items: center;
+  background-color: #fda918;
+}
+.wizards-tower > input {
+  align-items: center;
+  width: 80vh;
+}
+.wizards-tower > #time {
+  background-color: #fda918;
+  align-items: left;
+  font-size: small;
+  width: 10vh;
+}
+.wizards-tower > #name {
+  background-color: #fda918;
+  align-items: left;
+  font-size: medium;
+  width: 20vh;
+}
+.wizards-tower > #msg {
+  background-color: #fda918;
+  align-items: left;
+  width: 65vh;
+}
+.wizards-tower > nav > .header-logo {
+  border: solid #060501
+}
+
+.wizards-tower > nav > a {
+  color: white;
 }
